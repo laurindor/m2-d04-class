@@ -5,7 +5,7 @@
  * 2. Set the View Engine
  * 3. app.all() with the res.render() method
  * 4. set the views directory to tell express where templated are
- * 5. require the data
+ * 5. require the data for the page
  * 6. Pass data to the res.render() method
  */
 
@@ -32,7 +32,7 @@ app.all('/about', (request, response)=> {
   // response.send('<h1> Hello from Ironhack </h1>')
   // response.sendFile(path.join(__dirname, "./about.html"));
   // * 3. app.all() with the res.render() method
-  response.render('about')
+  response.render('about', student)
 })
 
 app.listen(3000)

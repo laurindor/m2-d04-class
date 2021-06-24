@@ -1,4 +1,4 @@
-export default { 
+const student =  { 
   name: 'Sofia',
   bootcamp: 'Barcelona',
   message: 'You Rock',
@@ -21,3 +21,5 @@ export default {
     }
   }
 }
+
+module.exports = student
