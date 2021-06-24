@@ -14,6 +14,33 @@ const path = require('path');
 // * 1. require hbs
 const hbs = require('hbs')
 
+// * 5. require the data for the page
+const student = require('./data/data.js')
+
+// marco
+const marco = require('./data/marco.js')
+
+// Lau
+const lau = require('./data/lau.js')
+
+// Morgane
+const morgane = require("./data/morgane.js")
+
+// Sebas
+const sebas = require("./data/sebas.js")
+
+// Raul
+const raul = require('./data/raul.js')
+
+// Miki
+const miki = require('./data/miki.js')
+
+// Daniel
+const dani = require("./data/danny.js")
+
+// Fran
+const fran = require("./data/fran.js")
+
 const app = express();
 
 // * 2. Set the View Engine
@@ -34,5 +61,36 @@ app.all('/about', (request, response)=> {
   // * 3. app.all() with the res.render() method
   response.render('about', student)
 })
+
+// Marco
+app.all('/marco', (req, res) => res.render('marco', marco))
+
+
+// Lau
+app.all('/lau', (req, res) => res.render('lau', lau))
+
+
+// Morgane
+app.all("/morgane", (req, res) => res.render("morgane", morgane))
+
+
+// Sebas
+app.all("/sebas", (rquest, response)=> res.render)
+
+// Raul
+app.all('/raul', (request, response) => response.render('raul', raul))
+
+
+// Daniel
+app.all("/danny", (req, res) => res.render("danny"))
+
+
+// Fran
+app.all('/fran', (req, res) => res.render("fran", fran))
+
+
+//Miki
+app.all('/miki', (req, res) => res.render('miki', miki))
+
 
 app.listen(3000)

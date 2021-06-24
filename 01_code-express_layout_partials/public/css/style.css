@@ -10,6 +10,10 @@ html {
 }
 
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
   background: #131c6e;
   color: white;
   padding: 10px;
