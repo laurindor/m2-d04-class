@@ -1,5 +1,14 @@
-<div class="my-info">  
-  <h1>Hello {{ name }} </h1>
+<div class="my-info">
+
+  {{#if name}}
+    <h1>Hello {{ name }} </h1>
+    <h4>I am {{age}} years old</h4>
+
+  {{else}}
+    <h1>Hello, student</h1>
+
+  {{/if}}
+
   <img src="http://giphygifs.s3.amazonaws.com/media/FQyQEYd0KlYQ/giphy.gif" alt="" height= "150px">
   <p>I am attending the bootcamp in {{ bootcamp }}</p>
 <h3>Here is my info</h3>
@@ -9,5 +18,25 @@
   <h4>
     In {{ info.campus }}
   </h4>
+
+  {{#if cities}}
+
+  <h4>Cities I've lived in</h4>
+  <ul>
+    {{#each cities}}
+
+
+      {{#unless @first}}
+      <p>{{@index}}</p>
+      {{/unless}}
+
+      <p>{{this}}</p>      
+
+    {{/each}}
+  </ul>
+
+
+
+  {{/if}}
   <p>That is what I have to say about my bootcamp: {{info.descr.content}}</p>
 </div>
