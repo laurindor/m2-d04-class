@@ -85,3 +85,20 @@ footer {
   padding: 10px 20px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
 }
+
+.myBootcamp {
+  background-color: #fafafa;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myBootcamp > h2 {
+  font-size: 1.3rem;
+}
+
+.myBootcamp > h4 {
+  font-size: 1.2rem;
+}

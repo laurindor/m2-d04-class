@@ -7,12 +7,18 @@
  * 4. set the views directory to tell express where templated are
  * 5. require the data for the page
  * 6. Pass data to the res.render() method
+ * 7. Register the partials directory
  */
 
 const express = require('express');
 const path = require('path');
 // * 1. require hbs
 const hbs = require('hbs')
+
+//  * 7. Register the partials directory
+//__dirname === /users/Altesis/01_code-express_layout_partials
+
+hbs.registerPartials(path.join(__dirname, '/views/partials'))
 
 // * 5. require the data for the page
 const student = require('./data/data.js')
@@ -43,11 +49,14 @@ const fran = require("./data/fran.js")
 
 const app = express();
 
+
 // * 2. Set the View Engine
 app.set('view engine', 'hbs')
 
 // * 4. set the views directory to tell express where templated are
 app.set(path.join(__dirname, '/views'))
+
+app.use( express.static("public") );
 
 app.all('/', (request, response)=> {
   // res.sendFile(path.join(__dirname, "./index.html"));

@@ -2,7 +2,7 @@ const student =  {
     name: 'Lau',
     bootcamp: 'Barcelona',
     message: 'Ohayo!',
-    address: 'Carrer Provença, 534',
+    address: 'Carrer Provença, 53674',
     // address: '',   // won't be rendered
     // address: 0,    // won't be rendered
     // address: [],   // won't be rendered
