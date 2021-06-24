@@ -22,16 +22,17 @@ app.set('view engine', 'hbs')
 // * 4. set the views directory to tell express where templated are
 app.set(path.join(__dirname, '/views'))
 
-app.all('/', (req, res)=> {
+app.all('/', (request, response)=> {
   // res.sendFile(path.join(__dirname, "./index.html"));
   // * 3. app.all() with the res.render() method
-  res.render('index', { pageTitle: "Home Page", cohortName: "Pizza Bytes" })
+  response.render('index', { pageTitle: "Home Page", cohortName: "Pizza Bytes" })
 })
 
-app.all('/about', (req, res)=> {
-  // res.sendFile(path.join(__dirname, "./about.html"));
+app.all('/about', (request, response)=> {
+  // response.send('<h1> Hello from Ironhack </h1>')
+  // response.sendFile(path.join(__dirname, "./about.html"));
   // * 3. app.all() with the res.render() method
-  res.render('about')
+  response.render('about')
 })
 
 app.listen(3000)
