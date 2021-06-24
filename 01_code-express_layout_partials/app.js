@@ -75,7 +75,7 @@ app.all("/morgane", (req, res) => res.render("morgane", morgane))
 
 
 // Sebas
-app.all("/sebas", (rquest, response)=> res.render)
+app.all("/sebas", (request, response)=> response.render("sebas", sebas))
 
 // Raul
 app.all('/raul', (request, response) => response.render('raul', raul))
