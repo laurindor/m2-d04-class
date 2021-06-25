@@ -44,3 +44,15 @@ Cat.find(
 )
 .then(cats=> console.log('Cat.find() results: ', cats))
 .catch( (err) => console.log('Cat.find() returned an error: ', err));
+
+
+mongoose.connection.on('connected', ()=> console.log('Mongoose connected (coming from the connection event listener)'))
+
+mongoose.connection.on('disconnected', () => console.log('Mongoose disconnected'));
+
+process.on('SIGINT', () => {
+  mongoose.connection.close(() => {
+    console.log('Mongoose default connection disconnected through app termination');
+    process.exit(0);
+  });
+});
