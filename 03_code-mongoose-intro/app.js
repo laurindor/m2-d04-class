@@ -23,6 +23,7 @@ mongoose.connect(`mongodb://localhost:27017/${DB_NAME}`,
 //the model is the name that mongoose uses to define classes of the documents
 //Cat is a name of the collection
 
+/*
 const Cat = mongoose.model(  
     "Cat" , 
     {
@@ -56,3 +57,51 @@ Cat.find(
 )
 .then(cats=> console.log('Cat find() results', cats))
 .catch(err=> console.log('Cat find() returned an error:',err))
+*/
+
+
+//you chain creations, a final promise creating and array of them together 
+
+const createCatPromise = Cat.create(
+    {
+      name: "Marco",
+      color: "carrot",
+      age: 3,
+      meowsLoudly: true,
+      sex: "M"
+    }
+  )
+  
+  const createDogPromise =  Dog.create(
+    {
+      name: "Fuffy",
+      color: "white",
+      age: 2,
+      barksLoudly: false,
+      sex: "M"
+    }
+  )
+  
+  //GROUPING we create a method "promise.all" who waits to both promises to be created, it's faster than one by one promises 
+  Promise.all([createCatPromise, createDogPromise])
+  .then(catsAndDogsArray => console.log(catsAndDogsArray) )
+
+  // and then we find it 
+
+  const catFindPromise = Cat.find(
+    {
+      name: "Marco"
+    }
+  )
+  
+  const dogFindPromise = Dog.find(
+    {
+      name: "Fuffy"
+    }
+  )
+  
+  Promise.all([catFindPromise, dogFindPromise])
+  .then(catsAndDogsArray => console.log("This is all the cats and dogs I have found", catsAndDogsArray))
+//events listeners to de connection events
+mongoose.connection.on('connected', ()=> console.log('Mongoose connected (coming from the connection event listener)'))
+mongoose.connection.on('disconnected', () => console.log ('Mongoose disconnected'))
