@@ -1,8 +1,8 @@
 const student =  { 
-  name: 'Sofia',
+  name: 'Raul',
   bootcamp: 'Barcelona',
-  message: 'You Rock',
-  address: 'Carrer Pamplona',
+  message: 'Hello',
+  address: 'Carrer Pamplona, 59',
   // address: '',   // won't be rendered
   // address: 0,    // won't be rendered
   // address: [],   // won't be rendered
