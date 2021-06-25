@@ -53,5 +53,6 @@ Cat.find(
 {
     name: "Marco"
 }
-
 )
+.then(cats=> console.log('Cat find() results', cats))
+.catch(err=> console.log('Cat find() returned an error:',err))
